@@ -16,8 +16,8 @@ necessary invocations).
 ###Exercise 1 - Singleton Pattern: Undo Command 
 
 - Overview
-Implementation of an **Undo** class that simulates the basic functionality of a command history system, 
-using the **Singleton design pattern** to ensure a single shared instance across the entire application.
+Implementation of an Undo class that simulates the basic functionality of a command history system, 
+using the Singleton design pattern to ensure a single shared instance across the entire application.
 
 - Features
 1. Store commands in a history list
@@ -26,21 +26,41 @@ using the **Singleton design pattern** to ensure a single shared instance across
 4. Display all stored commands (similar to Linux `history` command)
 
 - Technical Implementation
-1. **Singleton Pattern**: Private constructor, static `getInstance()` method
-2. **Data Structure**: `List<String>` for command storage (modern approach)
-3. **Methods**:
-  a. `addCommand(String command)`: Adds a command to history
-  b. `undoCommand()`: Removes and returns the last command
-  c. `showHistory()`: Displays all commands with numbered indexing
+1. Singleton Pattern: Private constructor, static `getInstance()` method
+2. Data Structure: `List<String>` for command storage (modern approach)
+3. Methods:
+	a. `addCommand(String command)`: Adds a command to history
+	b. `undoCommand()`: Removes and returns the last command
+	c. `showHistory()`: Displays all commands with numbered indexing
  
 ## Level 2
 
 ### Exercise 1 - Abstract Factory:
 
-Create a small manager for international addresses and phone numbers.
-The application must allow adding international addresses and phone numbers to the agenda. Taking into 
-account the different formats of different countries, build the agenda, addresses and phones implementing 
-an Abstract Factory pattern.
+- Overview
+Implementation of a contact management system that automatically formats addresses and phone numbers 
+according to the country of origin, using the Abstract Factory design pattern to create families of 
+related contact objects without specifying their concrete classes.
+
+- Features
+1. Create properly formatted addresses based on country-specific conventions
+2. Generate phone numbers with correct international prefixes and local formats
+3. Support for multiple countries (Spain and USA initially)
+4. Easily extensible to add new countries without modifying existing code
+
+- Technical Implementation
+
+1. Abstract Factory Pattern:
+	a. ContactFactory (abstract factory) defines the interface for creating address and phone objects
+	b. SpainContactFactory and USAContactFactory (concrete factories) implement country-specific creations
+2. Abstract Products:
+	a. Address interface with getFormattedAddress() method
+	b. Phone interface with getFormattedPhone() method
+3. Concrete Products:
+	a. SpainAddress, SpainPhone with Spanish formatting rules
+	b. USAAddress, USAPhone with US formatting rules
+4. Client: Contact class uses factories without knowing concrete implementations
+5. Testing: JUnit 5 tests verify correct formatting for both countries
 
 ## Level 3
 
@@ -50,10 +70,7 @@ Design a parking lot for 4 vehicles: a car, a bicycle, a plane and a ship.
 Show how the Command pattern works by implementing the start, accelerate and brake methods for each type 
 of vehicle.
 
-
-# Technologies Used  
-
-## Technologies
+## Technologies Used
 - Language: Java
 - IDE: IntelliJ IDEA Community Edition
 - Version Control: Git
@@ -68,13 +85,8 @@ of vehicle.
   - History display functionality
 
 
----
-
 ### Setup
 
 1. Clone the repository: https://github.com/ecantosf/Tasca-S3.01-Patterns-1.git
 2. Open the project with IntelliJ IDEA.
 3. Run the class `LevelXExercise1.Main.java` from each exercise folder.
-
----
-
