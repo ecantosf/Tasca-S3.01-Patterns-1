@@ -1,0 +1,161 @@
+gitignore
+### IntelliJ IDEA ###
+*.iml
+.idea/
+!.idea/codeStyles/
+!.idea/runConfigurations/
+!.idea/artifacts/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/sqlDataSources.xml
+.idea/dictionaries/
+.idea/libraries/
+.idea/usage.statistics.xml
+.idea/uiDesigner.xml
+*.ipr
+*.iws
+*.ids
+
+/out/
+
+### Plugin de Gradle ###
+.gradle/
+.gradletasknamecache
+
+### Plugin d'Eclipse ###
+.classpath
+.project
+.settings/
+bin/
+tmp/
+
+### Plugin de Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+
+### JIRA plugin ###
+atlassian-ide-plugin.xml
+
+### C++ ###
+cmake-build-*/
+
+### Editor de codi portable ###
+*.jetBrains
+
+### VS Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.log
+*.log.*
+logs/
+*.ctxt
+.mtj.tmp/
+.javadoc/
+*.javac
+*.jacoco
+jacoco.exec
+*.ec
+
+### Windows ###
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.tmp
+*.temp
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+### Editors de text ###
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*.orig
+*.~lock.*
+*~
+\#*\#
+.\#*
+
+### Projecte específic ###
+# Fitxers de configuració local
+*.properties.local
+application-local.yml
+application-local.properties
+
+# Fitxers de secrets
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.crt
+*.key
+*.pem
+
+# Fitxers de dades
+*.db
+*.sqlite
+*.h2.db
+
+# Fitxers de lliurament
+dist/
+release/
+deploy/
+
+# Fitxers de profiling
+*.hprof
+*.prof
+*.profdata
+*.profraw
+
+# Fitxers de backup
+*.bak
+*.backup
+*.old
+
+# Reports de tests
+test-output/
+reports/
+*.test-results
+*.testresult
