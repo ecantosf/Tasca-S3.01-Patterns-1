@@ -1,6 +1,4 @@
 S3.01 - Patterns 1
-
----
   
 # 🎯 Objectives
 
@@ -8,7 +6,6 @@ In this practice we will learn to identify and build programs using design patte
 is fundamental in building extensible and reusable software. The Java language, as well as all software 
 frameworks, are built according to the most important software patterns.
 
----
 #Exercises to Perform
 
 ## Level 1
@@ -16,14 +13,25 @@ frameworks, are built according to the most important software patterns.
 In all exercises, create a project with a Main class that demonstrates the use of the pattern (with the 
 necessary invocations).
 
-###Exercise 1 - Singleton: 
+###Exercise 1 - Singleton Pattern: Undo Command 
 
-Create a class that replicates the functionality of the 'Undo' command. This class will be used by the 
-Main class, which will allow introducing options via console.
+- Overview
+Implementation of an **Undo** class that simulates the basic functionality of a command history system, 
+using the **Singleton design pattern** to ensure a single shared instance across the entire application.
 
-The 'Undo' class must store the last commands entered. It must allow adding or removing commands, as well 
-as listing the last commands entered (similar to the 'history' command in Linux).
-The 'Undo' class must imperatively implement a Singleton pattern.
+- Features
+1. Store commands in a history list
+2. Add new commands to the history
+3. Undo the last command (LIFO behavior)
+4. Display all stored commands (similar to Linux `history` command)
+
+- Technical Implementation
+1. **Singleton Pattern**: Private constructor, static `getInstance()` method
+2. **Data Structure**: `List<String>` for command storage (modern approach)
+3. **Methods**:
+  a. `addCommand(String command)`: Adds a command to history
+  b. `undoCommand()`: Removes and returns the last command
+  c. `showHistory()`: Displays all commands with numbered indexing
  
 ## Level 2
 
@@ -43,25 +51,26 @@ Show how the Command pattern works by implementing the start, accelerate and bra
 of vehicle.
 
 
----
-# 💻 Technologies Used  
+# Technologies Used  
 
 ## Technologies
 - Language: Java
 - IDE: IntelliJ IDEA Community Edition
-- Version Control: Git 
+- Version Control: Git
+
+## Development Notes
+- Configured **IntelliJ Live Template** (custom "Patterns" group) for automatic Singleton code generation
+- Built with **Maven** for dependency management
+- Unit tests implemented with **JUnit 5** to verify:
+  - Singleton behavior (single instance)
+  - Command addition and removal
+  - Exception handling (empty history)
+  - History display functionality
+
 
 ---
 
-## 📋 Requirements  
-
-- Java 21
-- IntelliJ or another IDE 
-- Git 2.51
-
----
-
-### 🛠️ Setup
+### Setup
 
 1. Clone the repository: https://github.com/ecantosf/Tasca-S3.01-Patterns-1.git
 2. Open the project with IntelliJ IDEA.
@@ -69,10 +78,3 @@ of vehicle.
 
 ---
 
-## 🔗 Contributions
-
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/NewFeature`
-3. Make your changes and commit them: `git commit -m 'Add New Feature'`
-4. Push the changes to your branch: `git push origin feature/NewFeature`
-5. Open a pull request
