@@ -35,7 +35,7 @@ using the Singleton design pattern to ensure a single shared instance across the
  
 ## Level 2
 
-### Exercise 1 - Abstract Factory:
+### Exercise 1 - Abstract Factory: Contact Formatter
 
 - Overview
 Implementation of a contact management system that automatically formats addresses and phone numbers 
@@ -49,7 +49,6 @@ related contact objects without specifying their concrete classes.
 4. Easily extensible to add new countries without modifying existing code
 
 - Technical Implementation
-
 1. Abstract Factory Pattern:
 	a. ContactFactory (abstract factory) defines the interface for creating address and phone objects
 	b. SpainContactFactory and USAContactFactory (concrete factories) implement country-specific creations
@@ -64,11 +63,44 @@ related contact objects without specifying their concrete classes.
 
 ## Level 3
 
-### Exercise 1 - Command:
+### Exercise 1 - Strategy Pattern: Report Generation System:
 
-Design a parking lot for 4 vehicles: a car, a bicycle, a plane and a ship.
-Show how the Command pattern works by implementing the start, accelerate and brake methods for each type 
-of vehicle.
+- Overview
+Implementation of a flexible report generation system that can produce documents in multiple 
+formats (CSV, JSON, HTML, XML, PDF, Excel, Word) using the Strategy design pattern. The system 
+demonstrates how to encapsulate different algorithms (report formats) behind a common interface, 
+allowing them to be interchangeable at runtime.
+
+- Features
+1. Generate reports in 7 different formats: CSV, JSON, HTML, XML, PDF, Excel, Word
+2. Easily switch between formats without modifying existing code
+3. Add new report formats without changing the core service
+4. Demonstrate low coupling between the report service and specific implementations
+5. Show runtime strategy switching capability
+
+- Technical Implementation
+1. Strategy Pattern Components:
+a. Strategy Interface: ReportStrategy defines the contract with generate(String data, String outputPath) method
+b. Concrete Strategies: Seven implementations, one for each format:
+- CsvReportStrategy - Generates comma-separated value files
+- JsonReportStrategy - Creates JSON formatted documents
+- HtmlReportStrategy - Produces HTML web pages
+- XmlReportStrategy - Generates XML structured data
+- PdfReportStrategy - Creates PDF documents (simulated)
+- ExcelReportStrategy - Produces spreadsheet files (simulated)
+- WordReportStrategy - Creates word processing documents (simulated)
+c. Context Class: ReportService accepts any strategy and delegates report generation
+
+- Package Structure:
+1. interfaces/ - Contains the ReportStrategy interface
+2. impl/ - Houses all concrete strategy implementations
+3. service/ - Contains ReportService (context class)
+
+- Testing:
+1. Unit Tests: Each strategy has its own test verifying file creation and content format
+2. Service Tests: Demonstrate the service working with any strategy implementation
+3. Runtime Switching: Tests show changing strategies dynamically
+4. Extensibility Demo: Test showing new strategies can be added without modifying existing code
 
 ## Technologies Used
 - Language: Java
@@ -86,7 +118,5 @@ of vehicle.
 
 
 ### Setup
-
 1. Clone the repository: https://github.com/ecantosf/Tasca-S3.01-Patterns-1.git
 2. Open the project with IntelliJ IDEA.
-3. Run the class `LevelXExercise1.Main.java` from each exercise folder.
